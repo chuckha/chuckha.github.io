@@ -1,6 +1,6 @@
 baseURL = "https://chuckha.github.io/"
 languageCode = "en-us"
-title = "Chuck Ha"
+title = "A Professional Gluer"
 theme = "PaperMod"
 [pagination]
   pagerSize = 10
@@ -16,7 +16,7 @@ theme = "PaperMod"
   ShowToc = true
 
   [params.homeInfoParams]
-    Title = "Chuck Ha"
+    Title = "A Professional Gluer"
     Content = "Writing about AI, automation, and building things."
 
 [markup]
