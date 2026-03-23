@@ -1,0 +1,41 @@
+baseURL = "https://chuckha.github.io/"
+languageCode = "en-us"
+title = "Chuck Ha"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  env = "production"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+  [params.homeInfoParams]
+    Title = "Chuck Ha"
+    Content = "Writing about AI, automation, and building things."
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    codeFences = true
+    guessSyntax = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
