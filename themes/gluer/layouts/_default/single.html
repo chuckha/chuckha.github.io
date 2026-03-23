@@ -1,0 +1,47 @@
+{{ define "main" }}
+<article class="post">
+  <nav class="breadcrumbs">
+    <a href="{{ .Site.BaseURL }}">Home</a>
+    <span class="meta-sep">//</span>
+    <a href="{{ .Site.BaseURL }}posts/">Posts</a>
+    <span class="meta-sep">//</span>
+    <span>{{ .Title }}</span>
+  </nav>
+
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ partial "post-meta.html" . }}
+    {{ with .Params.tags }}
+    <div class="post-tags">
+      {{ range . }}
+        <a href="{{ absURL (printf "tags/%s/" (urlize .)) }}" class="tag">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </header>
+
+  {{ if and .Site.Params.ShowToc .TableOfContents }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <nav class="post-nav">
+    {{ with .PrevInSection }}
+      <a class="post-nav-link post-nav-prev" href="{{ .Permalink }}">
+        <span class="post-nav-label">&larr; Previous</span>
+        <span class="post-nav-title">{{ .Title }}</span>
+      </a>
+    {{ end }}
+    {{ with .NextInSection }}
+      <a class="post-nav-link post-nav-next" href="{{ .Permalink }}">
+        <span class="post-nav-label">Next &rarr;</span>
+        <span class="post-nav-title">{{ .Title }}</span>
+      </a>
+    {{ end }}
+  </nav>
+</article>
+<button id="scroll-top" class="scroll-top" aria-label="Scroll to top">&uarr;</button>
+{{ end }}

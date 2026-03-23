@@ -1,0 +1,9 @@
+name = "Gluer"
+license = "MIT"
+licenselink = ""
+description = "Custom theme for A Professional Gluer — 90s tech confidence meets AI-era precision"
+tags = ["blog", "minimal", "dark", "light", "responsive"]
+min_version = "0.112.0"
+
+[author]
+  name = "chuckha"

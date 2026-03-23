@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-accent"></div>
+  <h1 class="hero-title">{{ .Site.Title }}</h1>
+  <p class="hero-tagline">{{ .Site.Params.homeInfoParams.Content }}</p>
+</section>
+
+<section class="post-list">
+  {{ $mainSections := .Site.Params.mainSections | default (slice "posts") }}
+  {{ $pages := where .Site.RegularPages "Section" "in" $mainSections }}
+  {{ range $pages.ByDate.Reverse }}
+    {{ if not .Params.draft }}
+    <article class="post-entry">
+      <a href="{{ .Permalink }}">
+        <h2 class="post-entry-title">{{ .Title }}</h2>
+        {{ partial "post-meta.html" . }}
+        {{ with .Description }}
+          <p class="post-entry-summary">{{ . }}</p>
+        {{ end }}
+      </a>
+    </article>
+    {{ end }}
+  {{ end }}
+</section>
+
+{{ $pag := .Paginate (where .Site.RegularPages "Section" "in" ($mainSections)) }}
+{{ if gt $pag.TotalPages 1 }}
+<nav class="pagination">
+  {{ if $pag.HasPrev }}
+    <a href="{{ $pag.Prev.URL }}">&larr; Newer</a>
+  {{ end }}
+  {{ if $pag.HasNext }}
+    <a href="{{ $pag.Next.URL }}">Older &rarr;</a>
+  {{ end }}
+</nav>
+{{ end }}
+{{ end }}

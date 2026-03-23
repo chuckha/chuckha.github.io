@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="list-page">
+  <h1 class="list-title">{{ .Title }}</h1>
+
+  {{ .Content }}
+
+  <div class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+      {{ if not .Params.draft }}
+      <article class="post-entry">
+        <a href="{{ .Permalink }}">
+          <h2 class="post-entry-title">{{ .Title }}</h2>
+          {{ partial "post-meta.html" . }}
+          {{ with .Description }}
+            <p class="post-entry-summary">{{ . }}</p>
+          {{ end }}
+        </a>
+      </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

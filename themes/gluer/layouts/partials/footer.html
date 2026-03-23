@@ -1,0 +1,48 @@
+<footer class="footer">
+  <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+</footer>
+
+<script>
+// Theme toggle
+(function() {
+  var toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+  toggle.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+})();
+
+// Code copy buttons
+(function() {
+  var blocks = document.querySelectorAll('pre > code');
+  blocks.forEach(function(block) {
+    var pre = block.parentElement;
+    pre.style.position = 'relative';
+    var btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'copy';
+    btn.addEventListener('click', function() {
+      navigator.clipboard.writeText(block.textContent).then(function() {
+        btn.textContent = 'copied!';
+        setTimeout(function() { btn.textContent = 'copy'; }, 2000);
+      });
+    });
+    pre.appendChild(btn);
+  });
+})();
+
+// Scroll to top
+(function() {
+  var btn = document.getElementById('scroll-top');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
