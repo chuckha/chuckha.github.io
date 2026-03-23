@@ -5,8 +5,6 @@ tags: [ai, automation, tooling, go, architecture]
 description: "How BTT went from a hardcoded 3-agent pipeline to a general-purpose YAML workflow engine in 7 days — the key decisions, pivots, and what actually mattered."
 ---
 
-# Building Build The Thing, Part 2: Making It Real
-
 Part 1 laid out the pitch: BTT is a YAML-driven workflow engine for AI agents. The result envelope, the feedback loop, the quality gate — introduced but not explained.
 
 This post is the explanation. Seven days, 48 commits, three major pivots.

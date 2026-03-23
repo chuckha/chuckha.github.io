@@ -5,8 +5,6 @@ tags: [ai, automation, tooling, go]
 description: "The origin story of BTT: an experiment with AI-generated code that worked mechanically but failed structurally, and what that revealed about using AI as a content production system."
 ---
 
-# Building Build The Thing, Part 1: The Thesis
-
 Here's the idea: figure out how to get AI to generate something good, then use AI to generate *a lot* of content you find good. Code, prose, blog posts — doesn't matter. Get the recipe right, then scale it.
 
 This isn't copilot-style autocomplete. Autocomplete is a human writing code with AI suggestions. I'm talking about the other direction: AI writes the code, and the human defines what "good" means.

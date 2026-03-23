@@ -6,8 +6,6 @@ description: "The design decisions behind BTT's interface — why AI agents need
 draft: true
 ---
 
-# Designing the BTT Interface: Why a Simplified Jira for AI Agents
-
 AI agents don't need Jira. They need 10% of Jira.
 
 [Part 1](/posts/2026-03-building-btt-part-1-the-thesis) showed what happens when you throw 23 tasks at stateless agents — locally correct output that doesn't compose into anything coherent. [Part 2](/posts/2026-03-building-btt-part-2-making-it-real) walked through BTT's implementation. This post is about the design decisions. Why does BTT look like a simplified project management tool? Why tasks, epics, statuses, state machines?
