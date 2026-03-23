@@ -3,6 +3,7 @@ title: "Designing the BTT Interface: Why a Simplified Jira for AI Agents"
 date: 2026-03-22
 tags: [ai, automation, tooling, design, go]
 description: "The design decisions behind BTT's interface — why AI agents need tasks, epics, statuses, and state machines to do multi-step work reliably."
+draft: true
 ---
 
 # Designing the BTT Interface: Why a Simplified Jira for AI Agents
